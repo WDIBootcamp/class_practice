@@ -1,0 +1,33 @@
+<div class = "container">
+	<div class = "container">
+	<!-- action="/example" -->
+		<!-- action is the route where the request will be sent
+		on submission -->
+	<!-- method="GET" or "POST" -->
+		<!-- Just http verb used on submission of the form -->
+
+		<form action="/animals" method="POST">
+			<!-- creates the params[:animal] in sinatra -->
+			<input type="text" name="animal[species]">
+			<!-- when you call animal, you get a hash with a key of species -->
+			<textarea name="animal[description]">
+			</textarea>
+			<button> SUBMIT </button> 
+		</form>
+
+		<% @animals.each do |animal| %>
+			<div>
+				SPECIES: <%= animal[:species] %> <br>
+				Description: 
+				<p>
+				<%= animal[:description] %>
+				</p>
+			</div>
+
+		<% end %>
+
+<!--     animal (the key in the hash) has a species(key) and a description(key)
+		{"animal"=>{"species"=>"dog", "descritpion"=>"\tfluffy\t\t"}} -->
+
+</div>
+</div>
